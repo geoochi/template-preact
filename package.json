@@ -1,19 +1,19 @@
 {
-	"private": true,
-	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview"
-	},
-	"dependencies": {
-		"preact": "^10.25.3",
-		"preact-iso": "^2.9.1",
-		"preact-render-to-string": "^6.5.13"
-	},
-	"devDependencies": {
-		"@preact/preset-vite": "^2.10.1",
-		"typescript": "^5.8.2",
-		"vite": "^6.0.4"
-	}
+  "type": "module",
+  "packageManager": "pnpm@10.6.0",
+  "scripts": {
+    "d": "vite",
+    "b": "vite build",
+    "p": "pnpx http-server dist -a 127.0.0.1 -p 3000"
+  },
+  "dependencies": {
+    "preact": "^10.25.3",
+    "preact-iso": "^2.9.1",
+    "preact-render-to-string": "^6.5.13"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.1",
+    "typescript": "^5.8.2",
+    "vite": "^6.0.4"
+  }
 }
