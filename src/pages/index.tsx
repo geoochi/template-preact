@@ -1,17 +1,9 @@
 import { MoonIcon, SunIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import useTheme from '@/hooks/use-theme'
-import { useState, useEffect } from 'react'
 
 const Home: React.FC = () => {
   const { theme, setTheme } = useTheme()
-  const [count, setCount] = useState(0)
-
-  useEffect(() => {
-    fetch('/api/get-count')
-      .then(res => res.json())
-      .then(data => setCount(data.count))
-  }, [])
 
   return (
     <>
@@ -20,15 +12,6 @@ const Home: React.FC = () => {
         {theme === 'light' ? <SunIcon /> : <MoonIcon />}
       </Button>
       <a href='/about'>→ About Page</a>
-      <Button
-        onClick={() => {
-          fetch('/api/count-plus')
-          setCount(count + 1)
-        }}
-      >
-        count++
-      </Button>
-      <p>server count: {count}</p>
     </>
   )
 }
