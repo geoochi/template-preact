@@ -45,9 +45,6 @@ importers:
       tailwindcss:
         specifier: ^4.0.17
         version: 4.0.17
-      typescript:
-        specifier: ^5.8.2
-        version: 5.8.2
       vite:
         specifier: ^6.2.3
         version: 6.2.3(jiti@2.4.2)(lightningcss@1.29.2)
@@ -842,11 +839,6 @@ packages:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
 
-  typescript@5.8.2:
-    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   update-browserslist-db@1.1.3:
     resolution: {integrity: sha512-UxhIZQ+QInVdunkDAaiazvvT/+fXL5Osr0JZlJulepYu6Jd7qJtDZjlur0emRlT71EN3ScPoE7gvsuIKKNavKw==}
     hasBin: true
@@ -1559,8 +1551,6 @@ snapshots:
   tailwindcss@4.0.17: {}
 
   tapable@2.2.1: {}
-
-  typescript@5.8.2: {}
 
   update-browserslist-db@1.1.3(browserslist@4.24.4):
     dependencies:
