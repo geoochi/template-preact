@@ -1,10 +1,10 @@
 {
   "type": "module",
-  "packageManager": "pnpm@10.6.0",
+  "packageManager": "pnpm@10.7.1",
   "scripts": {
     "d": "vite",
     "b": "vite build",
-    "p": "pnpx http-server dist -a 127.0.0.1 -p 3000"
+    "p": "pnpx http-server dist -a localhost -p 5173"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
