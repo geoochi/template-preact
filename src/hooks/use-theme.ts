@@ -1,31 +1,43 @@
 import { useState, useEffect } from 'react'
 
+type Theme = 'light' | 'dark'
+
 function useTheme() {
-  const [theme, setTheme] = useState('')
+  const [theme, setTheme] = useState<Theme>('light')
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme) {
-      setTheme(savedTheme)
-    } else {
+    if (typeof window !== 'undefined') {
       setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    } else setTheme('light')
+    setIsLoaded(true)
+
+    if (typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+      const handleChange = (e: MediaQueryListEvent) => {
+        setTheme(e.matches ? 'dark' : 'light')
+      }
+      mediaQuery.addEventListener('change', handleChange)
+
+      return () => {
+        mediaQuery.removeEventListener('change', handleChange)
+      }
     }
   }, [])
 
   useEffect(() => {
-    if (!theme) return
-    localStorage.setItem('theme', theme)
+    if (!isLoaded) return
+
     if (theme === 'dark') {
       document.documentElement.classList.add('dark')
+      document.documentElement.style.colorScheme = 'dark'
     } else {
       document.documentElement.classList.remove('dark')
+      document.documentElement.style.colorScheme = 'light'
     }
-  }, [theme])
+  }, [theme, isLoaded])
 
-  return {
-    theme,
-    setTheme,
-  }
+  return { theme, setTheme }
 }
 
 export default useTheme
